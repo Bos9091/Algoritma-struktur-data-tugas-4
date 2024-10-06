@@ -1,0 +1,43 @@
+"LINK FLOWCHART"
+https://drive.google.com/file/d/1Xmiz6ih-4uiYZgURp8cPUbj6sMDoA9V2/view?usp=drivesdk
+
+"PSUDCODE"
+  Integer
+  Bolean
+
+INPUT: Matriks A dan B
+IF orde Matriks A dan B adalah 3x3 THEN
+    INISIALISASI Matriks hasil
+    UNTUK setiap elemen di Matriks A
+        UNTUK setiap elemen di Matriks B
+            KALKULASI hasil perkalian elemen-elemen
+            SIMPAN hasil di Matriks hasil
+    OUTPUT Matriks hasil
+ELSE
+    OUTPUT Error: Orde Matriks Tidak Sesuai
+END IF
+
+"CODE PYTHON"
+
+def perkalian_matriks(A, B):
+    # Periksa orde matriks
+    if len(A) != 3 or len(A[0]) != 3 or len(B) != 3 or len(B[0]) != 3:
+        return "Error: Orde Matriks Tidak Sesuai"
+
+    # Inisialisasi matriks hasil
+    hasil = [[0 for _ in range(3)] for _ in range(3)]
+
+    # Perkalian matriks
+    for i in range(3):
+        for j in range(3):
+            for k in range(3):
+                hasil[i][j] += A[i][k] * B[k][j]
+
+    return hasil
+
+# Contoh penggunaan
+A = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+B = [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+
+hasil = perkalian_matriks(A, B)
+print(hasil)
